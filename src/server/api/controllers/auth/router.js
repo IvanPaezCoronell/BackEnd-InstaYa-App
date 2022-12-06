@@ -33,7 +33,7 @@ router.post('/sign-up', validate(signUpSchema), async (req, res) => {
 			password: await hash(password),
 		};
 
-		const user = new User(payload);
+		const user = new User(payload); 
 		await user.save();
 
 		const query = await User.findById(user._id);
